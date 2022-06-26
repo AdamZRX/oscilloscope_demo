@@ -204,4 +204,4 @@ var myOscilloscope = new Oscilloscope(options)
 
 myOscilloscope.setFramerate('60');
 audioSetup();
-aplayer.play();
+//aplayer.play();
