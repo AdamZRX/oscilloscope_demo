@@ -22,7 +22,7 @@ body{
 
 #container{
 	max-height: 70vh;
-	display: inline-block;
+	display: flex;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -31,4 +31,18 @@ body{
 	width: 100%;
 	margin: auto
 	height: min(50vh,50vw);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.init-main {
+  animation: brb 1s infinite;
+  text-decoration: none;
+}
+
+@keyframes brb {
+     0% { color: black; }
+     10% { color: red; }
+     100% { color: black;}
 }
