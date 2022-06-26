@@ -149,8 +149,7 @@ function hexToRGB(hex, alpha) {
    }
 }
 
-var aplayer = document.getElementById('mAudioPlayer');
-//var aplayer = new Audio('spavec.mp3');
+var aplayer = new Audio('spavec.mp3');
 aplayer.loop = true;
 
 var options = {
@@ -174,11 +173,9 @@ var myOscilloscope = new Oscilloscope(options)
 	   analyser.minDecibels = -100;
 	   analyser.smoothingTimeConstant = 0.1;
 	   frequencyData = new Float32Array(analyser.frequencyBinCount);
-	   aplayer.setAttribute('src', 'spavec.mp3');
 	   var oscillator = audioContext.createOscillator();
 	   oscillator.type = "sine";
 	   oscillator.frequency.setValueAtTime(400, audioContext.currentTime);
-	   //oscillator.connect(analyser);
 	   oscillator.start();
 	   audioGain = audioContext.createGain();
 	   audioGain.gain.setValueAtTime(1, audioContext.currentTime);
@@ -202,6 +199,10 @@ var myOscilloscope = new Oscilloscope(options)
 	   dataArrayR = new Float32Array(bufferLength);
 	}
 
-myOscilloscope.setFramerate('60');
+const mSetup = function(el){
 audioSetup();
-//aplayer.play();
+myOscilloscope.setFramerate('60');
+aplayer.play();
+var element = el;
+  element.remove();
+}
